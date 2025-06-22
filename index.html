@@ -144,6 +144,11 @@
             box-shadow: 0 8px 32px rgba(0,123,204,0.15);
             transform: translateY(-8px) scale(1.03);
         }
+        .project-btns {
+            display: flex;
+            gap: 10px;
+            margin-top: 16px;
+        }
     </style>
     <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-papm6Z2+1kQwQ6Q0p6l6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q6Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -163,16 +168,21 @@
 <section id="projects">
     <h2>Projects</h2>
     <div class="project-list">
-        <a href="project.html" class="project project-link" style="text-decoration:none; color:inherit; cursor:pointer;">
+        <div class="project">
             <h3>Swiggy Customer Order Analysis</h3>
             <p>Analyzed food order patterns and delivery behavior using Python and Power BI dashboards.</p>
-            <span class="btn" style="pointer-events:none;">View Insights</span>
-            <a href="https://github.com/msarvesh2022/Sales-BI" class="btn" style="margin-left:10px; pointer-events:auto;">View on GitHub</a>
-        </a>
+            <div class="project-btns">
+                <a href="project.html" class="btn">View Insights</a>
+                <a href="https://github.com/msarvesh2022/Sales-BI" class="btn">View on GitHub</a>
+            </div>
+        </div>
         <div class="project">
             <h3>Customer Churn Prediction</h3>
             <p>Built a machine learning model in Python with Flask to predict customer churn in a telecom company.</p>
-            <a href="https://github.com/msarvesh2022/Customer-Churn-Prediction" class="btn">View on GitHub</a>
+            <div class="project-btns">
+                <a href="#" class="btn">View Insights</a>
+                <a href="https://github.com/msarvesh2022/Customer-Churn-Prediction" class="btn">View on GitHub</a>
+            </div>
         </div>
         <!-- Add more projects as needed -->
     </div>

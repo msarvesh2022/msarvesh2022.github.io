@@ -4,96 +4,188 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sarvesh Mishra | Data Analyst</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Montserrat', Arial, sans-serif;
             margin: 0;
-            background: #f4f4f4;
-            color: #333;
+            background: linear-gradient(135deg, #e0e7ff 0%, #f4f4f4 100%);
+            color: #222;
         }
-
         header {
-            background-color: #0077cc;
+            background: linear-gradient(90deg, #0077cc 60%, #00c6fb 100%);
             color: white;
-            padding: 20px 40px;
+            padding: 0;
             text-align: center;
+            position: relative;
         }
-
+        .hero {
+            padding: 50px 20px 30px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+        .profile-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 4px solid #fff;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            background: #eee url('https://avatars.githubusercontent.com/u/9919?s=200&v=4') center/cover no-repeat;
+            margin-bottom: 18px;
+        }
+        .hero h1 {
+            margin: 0 0 10px 0;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+        .hero p {
+            margin: 0;
+            font-size: 1.2rem;
+            font-weight: 400;
+        }
         section {
-            padding: 40px;
+            padding: 40px 20px;
             max-width: 900px;
             margin: auto;
         }
-
         h2 {
             color: #0077cc;
+            margin-bottom: 18px;
+            font-size: 2rem;
         }
-
+        .project-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+        }
         .project {
             background: white;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            padding: 24px 20px 20px 20px;
+            border-radius: 16px;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: transform 0.2s, box-shadow 0.2s;
+            position: relative;
         }
-
+        .project:hover {
+            transform: translateY(-8px) scale(1.03);
+            box-shadow: 0 8px 32px rgba(0,123,204,0.15);
+        }
         .btn {
             display: inline-block;
-            padding: 8px 12px;
-            background: #0077cc;
+            padding: 10px 18px;
+            background: linear-gradient(90deg, #0077cc 60%, #00c6fb 100%);
             color: white;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 6px;
+            font-weight: 600;
+            margin-top: 12px;
+            transition: background 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(0,123,204,0.08);
         }
-
+        .btn:hover {
+            background: linear-gradient(90deg, #005fa3 60%, #009ec3 100%);
+            box-shadow: 0 4px 16px rgba(0,123,204,0.18);
+        }
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        .skill-badge {
+            background: #e0e7ff;
+            color: #0077cc;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 1rem;
+            box-shadow: 0 2px 8px rgba(0,123,204,0.06);
+        }
         footer {
             text-align: center;
-            padding: 20px;
-            background: #eee;
+            padding: 28px 10px 18px 10px;
+            background: #f0f4fa;
+            color: #555;
+            font-size: 1rem;
         }
-
-        ul {
-            padding-left: 20px;
+        .social-links {
+            margin: 12px 0 0 0;
+        }
+        .social-links a {
+            display: inline-block;
+            margin: 0 10px;
+            color: #0077cc;
+            font-size: 1.5rem;
+            transition: color 0.2s;
+        }
+        .social-links a:hover {
+            color: #005fa3;
+        }
+        @media (max-width: 600px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            section {
+                padding: 24px 8px;
+            }
+            .project-list {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
+    <!-- Font Awesome for social icons -->
+    <script src="https://kit.fontawesome.com/4e9c8e4e2e.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
 <header>
-    <h1>Sarvesh Mishra</h1>
-    <p>Data Analyst | Python | SQL | Power BI</p>
+    <div class="hero">
+        <div class="profile-img"></div>
+        <h1>Sarvesh Mishra</h1>
+        <p>Data Analyst | Python | SQL | Power BI</p>
+    </div>
 </header>
-
 <section id="about">
     <h2>About Me</h2>
     <p>Hello! I'm Sarvesh, a data analyst with a passion for turning raw data into actionable insights. I specialize in Python, Power BI, SQL, and machine learning projects. I enjoy solving business problems using data.</p>
 </section>
-
 <section id="projects">
     <h2>Projects</h2>
-
-    <div class="project">
-        <h3>Swiggy Customer Order Analysis</h3>
-        <p>Analyzed food order patterns and delivery behavior using Python and Power BI dashboards.</p>
-        <a href="https://github.com/msarvesh2022/Sales-BI" class="btn">View on GitHub</a>
+    <div class="project-list">
+        <div class="project">
+            <h3>Swiggy Customer Order Analysis</h3>
+            <p>Analyzed food order patterns and delivery behavior using Python and Power BI dashboards.</p>
+            <a href="https://github.com/msarvesh2022/Sales-BI" class="btn">View on GitHub</a>
+        </div>
+        <div class="project">
+            <h3>Customer Churn Prediction</h3>
+            <p>Built a machine learning model in Python with Flask to predict customer churn in a telecom company.</p>
+            <a href="https://github.com/msarvesh2022/Customer-Churn-Prediction" class="btn">View on GitHub</a>
+        </div>
+        <!-- Add more projects as needed -->
     </div>
-
-    <div class="project">
-        <h3>Customer Churn Prediction</h3>
-        <p>Built a machine learning model in Python with Flask to predict customer churn in a telecom company.</p>
-        <a href="https://github.com/msarvesh2022/Customer-Churn-Prediction" class="btn">View on GitHub</a>
-    </div>
-
-    <!-- Add more projects as needed -->
 </section>
-
 <section id="skills">
     <h2>Skills</h2>
-    <ul>
-        <li>Python (Pandas, NumPy, Scikit-learn)</li>
-        <li>SQL (MySQL, PostgreSQL, BigQuery)</li>
-        <li>Power BI, Excel</li>
-        <li>Flask (Basic Deployment)</li>
-        <li>Machine Learning (Intermediate)</li>
+    <ul class="skills-grid">
+        <li class="skill-badge">Python (Pandas, NumPy, Scikit-learn)</li>
+        <li class="skill-badge">SQL (MySQL, PostgreSQL, BigQuery)</li>
+        <li class="skill-badge">Power BI, Excel</li>
+        <li class="skill-badge">Flask (Basic Deployment)</li>
+        <li class="skill-badge">Machine Learning (Intermediate)</li>
     </ul>
 </section>
+<footer>
+    <div>© 2024 Sarvesh Mishra. All rights reserved.</div>
+    <div class="social-links">
+        <a href="https://github.com/msarvesh2022" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/sarvesh-mishra-6316ab228/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <!-- Add more social links as needed -->
+    </div>
+</footer>
+</body>
+</html>

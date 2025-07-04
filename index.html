@@ -183,7 +183,7 @@
 </section>
 <!-- Automatic Moving Banner (Image Slider) - now below About Me -->
 <div class="slider">
-  <img src="https://raw.githubusercontent.com/msarvesh2022/Sales-BI/main/bi-1.png" class="slide" style="display:block;">
+  <img src="https://raw.githubusercontent.com/msarvesh2022/Sales-BI/main/bi-1.png" class="slide">
   <img src="https://raw.githubusercontent.com/msarvesh2022/Sales-BI/main/bi-2.png" class="slide">
   <img src="https://raw.githubusercontent.com/msarvesh2022/Sales-BI/main/bi-3.png" class="slide">
 </div>
@@ -232,16 +232,17 @@
 document.addEventListener('DOMContentLoaded', function() {
   let slideIndex = 0;
   const slides = document.getElementsByClassName("slide");
-  function showSlides() {
+  function showSlide(idx) {
     for (let i = 0; i < slides.length; i++) {
       slides[i].style.display = "none";
     }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}
-    slides[slideIndex-1].style.display = "block";
-    setTimeout(showSlides, 2500); // Change image every 2.5 seconds
+    slides[idx].style.display = "block";
   }
-  showSlides();
+  showSlide(slideIndex); // Show the first image immediately
+  setInterval(function() {
+    slideIndex = (slideIndex + 1) % slides.length;
+    showSlide(slideIndex);
+  }, 2500);
 });
 </script>
 </body>

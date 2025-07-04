@@ -153,11 +153,12 @@
           position: relative;
           width: 100%;
           max-width: 600px;
-          margin: 30px auto 0 auto;
+          margin: 40px auto 40px auto;
           border-radius: 12px;
           overflow: hidden;
           box-shadow: 0 2px 8px rgba(0,123,204,0.10);
           background: #fff;
+          display: block;
         }
         .slide {
           width: 100%;
@@ -176,16 +177,16 @@
         <p>Data Analyst | Python | SQL | Power BI</p>
     </div>
 </header>
-<!-- Automatic Moving Banner (Image Slider) -->
+<section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I'm Sarvesh, a data analyst with a passion for turning raw data into actionable insights. I specialize in Python, Power BI, SQL, and machine learning projects. I enjoy solving business problems using data.</p>
+</section>
+<!-- Automatic Moving Banner (Image Slider) - now below About Me -->
 <div class="slider">
   <img src="https://raw.githubusercontent.com/msarvesh2022/Sales-BI/main/bi-1.png" class="slide" style="display:block;">
   <img src="https://raw.githubusercontent.com/msarvesh2022/Sales-BI/main/bi-2.png" class="slide">
   <img src="https://raw.githubusercontent.com/msarvesh2022/Sales-BI/main/bi-3.png" class="slide">
 </div>
-<section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm Sarvesh, a data analyst with a passion for turning raw data into actionable insights. I specialize in Python, Power BI, SQL, and machine learning projects. I enjoy solving business problems using data.</p>
-</section>
 <section id="projects">
     <h2>Projects</h2>
     <div class="project-list">
@@ -228,18 +229,20 @@
     </div>
 </footer>
 <script>
-let slideIndex = 0;
-const slides = document.getElementsByClassName("slide");
-function showSlides() {
-  for (let i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
+document.addEventListener('DOMContentLoaded', function() {
+  let slideIndex = 0;
+  const slides = document.getElementsByClassName("slide");
+  function showSlides() {
+    for (let i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}
+    slides[slideIndex-1].style.display = "block";
+    setTimeout(showSlides, 2500); // Change image every 2.5 seconds
   }
-  slideIndex++;
-  if (slideIndex > slides.length) {slideIndex = 1}
-  slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 2500); // Change image every 2.5 seconds
-}
-showSlides();
+  showSlides();
+});
 </script>
 </body>
 </html>

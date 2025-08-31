@@ -150,6 +150,44 @@
             gap: 10px;
             margin-top: 16px;
         }
+         .rotating-skills {
+            background: linear-gradient(90deg, #0077cc 60%, #00c6fb 100%);
+            padding: 30px 20px;
+            text-align: center;
+            color: white;
+        }
+        .skills-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            height: 60px;
+            overflow: hidden;
+        }
+        .skill-group {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.5s ease;
+        }
+        .skill-group.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .skill-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 14px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
     </style>
     <!-- Font Awesome for social icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -162,6 +200,26 @@
         <p>Data Analytics & Product Optimization</p>
     </div>
 </header>
+<!-- Rotating Skills Section -->
+<div class="rotating-skills">
+    <div class="skills-container">
+        <div class="skill-group active">
+            <span class="skill-item">Data Analytics</span>
+            <span class="skill-item">Product Growth & Optimization</span>
+            <span class="skill-item">A/B Testing</span>
+        </div>
+        <div class="skill-group">
+            <span class="skill-item">SQL</span>
+            <span class="skill-item">MS Excel</span>
+            <span class="skill-item">Dashboard building [PowerBI]</span>
+        </div>
+        <div class="skill-group">
+            <span class="skill-item">Database (MySQL, PostgreSQL, BigQuery)</span>
+            <span class="skill-item">Python</span>
+            <span class="skill-item">Git</span>
+        </div>
+    </div>
+</div>
 <section id="about">
     <h2>About Me</h2>
     <p>Hello! I'm Sarvesh.
@@ -230,5 +288,25 @@
         <!-- Add more social links as needed -->
     </div>
 </footer>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const skillGroups = document.querySelectorAll('.skill-group');
+    let currentIndex = 0;
+    
+    function rotateSkills() {
+        // Hide current group
+        skillGroups[currentIndex].classList.remove('active');
+        
+        // Move to next group
+        currentIndex = (currentIndex + 1) % skillGroups.length;
+        
+        // Show new group
+        skillGroups[currentIndex].classList.add('active');
+    }
+    
+    // Start rotation every 2 seconds
+    setInterval(rotateSkills, 2000);
+});
+</script>
 </body>
 </html>

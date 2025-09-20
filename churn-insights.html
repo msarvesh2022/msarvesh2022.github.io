@@ -171,89 +171,34 @@
             </ul>
         </div>
 
-        <div class="metric">
-            <h3>Model Performance</h3>
-            <p><strong>Accuracy:</strong> 87.5% | <strong>Precision:</strong> 84.2% | <strong>Recall:</strong> 89.1% | <strong>F1-Score:</strong> 86.6%</p>
-        </div>
+    </div>
+
+    <div class="insight">
+        <h2>Data Analysis & Visualizations</h2>
         
-        <div class="metric">
-            <h3>Top Churn Indicators</h3>
-            <ul>
-                <li><strong>Account Balance:</strong> Customers with low account balances (below $500) have 3.2x higher churn probability</li>
-                <li><strong>Credit Score:</strong> Credit scores below 650 correlate with 2.8x increased churn risk</li>
-                <li><strong>Age:</strong> Customers aged 18-25 show 2.1x higher churn rates</li>
-                <li><strong>Number of Products:</strong> Customers with only 1 product have 2.5x higher churn probability</li>
-                <li><strong>Geography:</strong> Germany shows 1.8x higher churn rates compared to France and Spain</li>
-            </ul>
-        </div>
+        <h3>Total Customer Records of Different Demographics</h3>
+        <img src="https://github.com/msarvesh2022/Customer-Churn-Prediction/blob/main/image_sc/bn-1.png" alt="Customer Demographics" class="insight-img">
+        <p style="color:#555;">Figure: Distribution of customer records across different demographic segments.</p>
 
-        <div class="metric">
-            <h3>Business Impact</h3>
-            <ul>
-                <li>Identified 23% of customer base at high churn risk</li>
-                <li>Potential revenue retention: $2.3M annually</li>
-                <li>Recommended targeted retention campaigns for high-risk segments</li>
-                <li>Proposed personalized product recommendations for at-risk customers</li>
-            </ul>
-        </div>
-    </div>
+        <h3>Attrition Rate vs Balance in Account</h3>
+        <img src="https://github.com/msarvesh2022/Customer-Churn-Prediction/blob/main/image_sc/bn-7.png" alt="Attrition Rate vs Balance" class="insight-img">
+        <p style="color:#555;">Figure: Relationship between account balance and customer attrition rates.</p>
+        <p><strong>Key Insight:</strong> This shows attrition rate is lower for lower balance but after the spending years and transactions, the bank is losing their high value customers, so there could be a service problem.</p>
 
-    <div class="insight">
-        <h2>Technical Implementation</h2>
-        <h3>Data Preprocessing</h3>
+        <h3>How Age is Affecting Customer Behavior</h3>
+        <img src="https://github.com/msarvesh2022/Customer-Churn-Prediction/blob/main/image_sc/bn-2.png" alt="Age vs Customer Behavior" class="insight-img">
+        <p style="color:#555;">Figure: Impact of customer age on attrition patterns.</p>
         <ul>
-            <li>Handled missing values using median imputation for numerical features</li>
-            <li>Encoded categorical variables using Label Encoding and One-Hot Encoding</li>
-            <li>Applied StandardScaler for feature normalization</li>
-            <li>Balanced dataset using SMOTE to address class imbalance</li>
+            <li>As age increases, the attrition rate also rises.</li>
+            <li>The critical age is around 45, where the rates of attrition and retention are the same.</li>
+            <li>After the age of 45, the bank loses customers significantly.</li>
         </ul>
 
-        <h3>Model Selection & Evaluation</h3>
-        <ul>
-            <li>Tested multiple algorithms: Random Forest, XGBoost, Logistic Regression, SVM</li>
-            <li>Random Forest performed best with 87.5% accuracy</li>
-            <li>Used cross-validation and hyperparameter tuning for optimal performance</li>
-            <li>Implemented feature importance analysis for business insights</li>
-        </ul>
-
-        <h3>Deployment</h3>
-        <ul>
-            <li>Built interactive Flask web application</li>
-            <li>Created user-friendly interface for real-time predictions</li>
-            <li>Implemented model persistence using pickle</li>
-            <li>Added input validation and error handling</li>
-        </ul>
+        <h3>Comparison of Retain Rate</h3>
+        <img src="https://github.com/msarvesh2022/Customer-Churn-Prediction/blob/main/image_sc/bn-3.png" alt="Retain Rate Comparison" class="insight-img">
+        <p style="color:#555;">Figure: Comparative analysis of customer retention rates across different segments.</p>
     </div>
 
-    <div class="insight">
-        <h2>Visualization</h2>
-        <p>Interactive dashboard showing model performance metrics, feature importance, and customer segmentation analysis.</p>
-        <img src="https://raw.githubusercontent.com/msarvesh2022/Customer-Churn-Prediction/main/dashboard_preview.png" alt="Customer Churn Prediction Dashboard" class="insight-img">
-        <p style="color:#555;">Figure: Machine Learning Dashboard showing prediction results and key metrics.</p>
-    </div>
-
-    <div class="insight">
-        <h2>Recommendations</h2>
-        <div class="metric">
-            <h3>Immediate Actions</h3>
-            <ul>
-                <li>Launch targeted retention campaigns for customers with low account balances</li>
-                <li>Offer credit score improvement programs for at-risk segments</li>
-                <li>Develop loyalty programs for younger customers (18-25 age group)</li>
-                <li>Create cross-selling strategies for single-product customers</li>
-            </ul>
-        </div>
-
-        <div class="metric">
-            <h3>Long-term Strategy</h3>
-            <ul>
-                <li>Implement real-time churn prediction system</li>
-                <li>Develop automated intervention triggers</li>
-                <li>Create personalized customer journey mapping</li>
-                <li>Establish regular model retraining pipeline</li>
-            </ul>
-        </div>
-    </div>
 
     <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
 </div>

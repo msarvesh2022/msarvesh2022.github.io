@@ -14,43 +14,63 @@
       color: #333;
     }
 
-    /* HERO */
-    .hero {
-      background: #0073e6;
-      color: white;
-      padding: 40px 20px;
+    /* HEADER */
+    .header {
       text-align: center;
+      padding: 40px 20px;
+      background: white;
     }
 
-    .hero img {
-      width: 110px;
-      height: 110px;
+    .header img {
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
-      border: 3px solid white;
-      margin-bottom: 10px;
+      border: 4px solid #0073e6;
     }
 
-    .hero h1 {
+    .header h1 {
       margin: 10px 0 5px;
     }
 
-    .hero p {
+    .header p {
       margin: 5px 0;
-      font-size: 14px;
+      color: #555;
     }
 
-    /* GRID */
-    .container {
-      max-width: 1100px;
-      margin: 30px auto;
-      padding: 0 20px;
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+    a {
+      color: #0073e6;
+      text-decoration: none;
     }
 
-    /* CARD */
+    /* SUMMARY BOX */
+    .summary {
+      max-width: 900px;
+      margin: 20px auto;
+      background: linear-gradient(135deg, #0073e6, #00aaff);
+      color: white;
+      padding: 25px;
+      border-radius: 10px;
+      font-size: 15px;
+    }
+
+    /* SECTION TITLE */
+    .section-title {
+      max-width: 900px;
+      margin: 30px auto 10px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* EXPERIENCE CARDS */
+    .experience-container {
+      max-width: 900px;
+      margin: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
     .card {
       background: white;
       padding: 20px;
@@ -58,25 +78,21 @@
       box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
-    .card h2 {
-      margin-top: 0;
-      font-size: 18px;
-      border-bottom: 2px solid #0073e6;
-      padding-bottom: 5px;
-    }
-
-    .job {
-      margin-bottom: 15px;
-    }
-
     .job-title {
       font-weight: bold;
-      font-size: 14px;
+      font-size: 16px;
+    }
+
+    .company {
+      color: #0073e6;
+      font-weight: bold;
+      margin-top: 5px;
     }
 
     .date {
-      font-size: 12px;
+      font-size: 13px;
       color: #777;
+      margin-bottom: 10px;
     }
 
     ul {
@@ -84,23 +100,18 @@
     }
 
     li {
+      margin-bottom: 6px;
       font-size: 14px;
-      margin-bottom: 5px;
     }
 
-    .skills span {
-      display: inline-block;
-      background: #0073e6;
-      color: white;
-      padding: 6px 10px;
-      margin: 5px 5px 0 0;
-      border-radius: 6px;
-      font-size: 12px;
-    }
-
-    a {
-      color: white;
-      text-decoration: underline;
+    /* SKILLS + GOAL */
+    .simple-section {
+      max-width: 900px;
+      margin: 30px auto;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.08);
     }
 
   </style>
@@ -109,106 +120,85 @@
 
 <body>
 
-<!-- HERO SECTION -->
+<!-- HEADER -->
 
-<div class="hero">
+<div class="header">
   <img src="https://raw.githubusercontent.com/msarvesh2022/msarvesh2022.github.io/main/WhatsApp%20Image%202026-05-05%20at%2010.37.57%20PM.jpeg">
   <h1>Sarvesh Mishra</h1>
-  <p>Tech Sales | SaaS | Business Development</p>
   <p>📞 +91 8957883380 | ✉️ sarveshmishra.bhu20@gmail.com</p>
   <p>
     <a href="https://www.linkedin.com/in/sarvesh-mishra-6316ab228" target="_blank">LinkedIn Profile</a>
   </p>
 </div>
 
-<!-- GRID -->
+<!-- SUMMARY -->
 
-<div class="container">
+<div class="summary">
+  Results-driven Sales Development professional with 1.5+ years of experience in SaaS, e-commerce, and influencer marketing. Skilled in high-volume outbound prospecting, pipeline generation, and end-to-end sales cycles. Currently at Shopdeck, driving seller acquisition through cold calling, demos, and consultative selling while managing CRM workflows in Salesforce.
+</div>
 
-  <!-- SUMMARY -->
+<!-- EXPERIENCE TITLE -->
 
-  <div class="card">
-    <h2>Summary</h2>
-    <p>
-      Results-driven Sales Development professional with 1.5+ years of experience in SaaS, e-commerce, and influencer marketing. Skilled in high-volume outbound prospecting, pipeline generation, and end-to-end sales cycles.
-    </p>
-  </div>
+<div class="section-title">Work Experience</div>
 
-  <!-- SKILLS -->
+<!-- EXPERIENCE CARDS -->
 
-  <div class="card">
-    <h2>Skills</h2>
-    <div class="skills">
-      <span>Lead Generation</span>
-      <span>B2B Sales</span>
-      <span>Cold Calling</span>
-      <span>CRM (Salesforce)</span>
-      <span>Market Research</span>
-      <span>Sales Strategy</span>
-      <span>Excel</span>
-      <span>Power BI</span>
-      <span>Apollo</span>
-      <span>ZoomInfo</span>
-    </div>
-  </div>
-
-  <!-- EXPERIENCE -->
+<div class="experience-container">
 
   <div class="card">
-    <h2>Shopdeck</h2>
-    <div class="job">
-      <div class="job-title">Business Development Associate</div>
-      <div class="date">March 2026 – Present</div>
-      <ul>
-        <li>100+ outbound calls daily</li>
-        <li>3–4 client meetings/day</li>
-        <li>End-to-end sales cycle</li>
-      </ul>
-    </div>
+    <div class="job-title">Business Development Associate</div>
+    <div class="company">Shopdeck</div>
+    <div class="date">March 2026 – Present</div>
+    <ul>
+      <li>100+ outbound calls daily and 3–4 client meetings</li>
+      <li>End-to-end sales cycle management</li>
+      <li>Salesforce CRM tracking and follow-ups</li>
+    </ul>
   </div>
 
   <div class="card">
-    <h2>StarsColab</h2>
-    <div class="job">
-      <div class="job-title">Sales Executive</div>
-      <div class="date">Nov 2025 – March 2026</div>
-      <ul>
-        <li>Closed influencer marketing deals</li>
-        <li>Managed brand relationships</li>
-        <li>Lead generation & research</li>
-      </ul>
-    </div>
+    <div class="job-title">Sales Executive</div>
+    <div class="company">StarsColab</div>
+    <div class="date">Nov 2025 – March 2026</div>
+    <ul>
+      <li>Closed influencer marketing deals with brands</li>
+      <li>Maintained long-term client relationships</li>
+      <li>Lead generation and competitor analysis</li>
+    </ul>
   </div>
 
   <div class="card">
-    <h2>Lupin Limited</h2>
-    <div class="job">
-      <div class="job-title">Marketing Executive</div>
-      <div class="date">Feb 2024 – March 2025</div>
-      <ul>
-        <li>Executed marketing strategies</li>
-        <li>Market research & analysis</li>
-        <li>Retail & stockist coordination</li>
-      </ul>
-    </div>
+    <div class="job-title">Marketing Executive</div>
+    <div class="company">Lupin Limited</div>
+    <div class="date">Feb 2024 – March 2025</div>
+    <ul>
+      <li>Executed marketing strategies and campaigns</li>
+      <li>Conducted market research and analysis</li>
+      <li>Managed retailer and stockist communication</li>
+    </ul>
   </div>
 
-  <!-- EDUCATION -->
+</div>
 
-  <div class="card">
-    <h2>Education</h2>
-    <p>BSc - Banaras Hindu University (2020–2023)</p>
-  </div>
+<!-- SKILLS -->
 
-  <!-- GOAL -->
+<div class="simple-section">
+  <h2>Skillsets</h2>
+  <ul>
+    <li>Lead generation, B2B/B2C sales, Client acquisition, Relationship management</li>
+    <li>Negotiation, Revenue growth, Market segmentation, Pricing strategy</li>
+    <li>CRM analytics, Funnel optimization, Conversion tracking</li>
+    <li>Apollo, ZoomInfo, Salesforce, Excel, Power BI, PowerPoint</li>
+  </ul>
+</div>
 
-  <div class="card">
-    <h2>Career Goal</h2>
-    <p>
-      To leverage my sales and marketing skills to drive revenue growth, optimize strategies, and build strong client relationships in a tech-driven environment.
-    </p>
-  </div>
+<!-- GOAL -->
 
+<div class="simple-section">
+  <h2>Career Goal</h2>
+  <p>
+    Seeking a challenging role in Sales and Marketing where I can leverage my skills in lead generation and business development to drive revenue growth. I aim to contribute to strategic decision-making, optimize marketing campaigns, and strengthen client relationships while continuously enhancing my analytical and leadership abilities.
+  </p>
 </div>
 
 </body>

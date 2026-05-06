@@ -1,327 +1,166 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sarvesh Mishra | Analytics & ML</title>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: monospace;
-            font-size: 16px;
-            margin: 0;
-            background: linear-gradient(135deg, #e0e7ff 0%, #f4f4f4 100%);
-            color: #222;
-        }
-        header {
-            background: linear-gradient(90deg, #0077cc 60%, #00c6fb 100%);
-            color: white;
-            padding: 0;
-            text-align: center;
-            position: relative;
-        }
-        .hero {
-            padding: 50px 20px 30px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-        .profile-img {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            border: 4px solid #fff;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
-            background: #eee url('Profile picture.png') center/cover no-repeat;
-            margin-bottom: 18px;
-        }
-        .hero h1 {
-            margin: 0 0 10px 0;
-            font-size: 2.5rem;
-            font-weight: 700;
-            letter-spacing: 1px;
-        }
-        .hero p {
-            margin: 0;
-            font-size: 1.2rem;
-            font-weight: 400;
-        }
-        section {
-            padding: 40px 20px;
-            max-width: 900px;
-            margin: auto;
-        }
-        h2 {
-            color: #0077cc;
-            margin-bottom: 18px;
-            font-size: 2rem;
-        }
-        .project-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
-        }
-        .project {
-            background: white;
-            padding: 24px 20px 20px 20px;
-            border-radius: 16px;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            transition: transform 0.2s, box-shadow 0.2s;
-            position: relative;
-        }
-        .project:hover {
-            transform: translateY(-8px) scale(1.03);
-            box-shadow: 0 8px 32px rgba(0,123,204,0.15);
-        }
-        .btn {
-            display: inline-block;
-            padding: 10px 18px;
-            background: linear-gradient(90deg, #0077cc 60%, #00c6fb 100%);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-weight: 600;
-            margin-top: 12px;
-            transition: background 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 8px rgba(0,123,204,0.08);
-        }
-        .btn:hover {
-            background: linear-gradient(90deg, #005fa3 60%, #009ec3 100%);
-            box-shadow: 0 4px 16px rgba(0,123,204,0.18);
-        }
-        .skills-grid {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 14px;
-            margin: 0;
-            padding: 0;
-            list-style: none;
-        }
-        .skill-badge {
-            background: #e0e7ff;
-            color: #0077cc;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 1rem;
-            box-shadow: 0 2px 8px rgba(0,123,204,0.06);
-        }
-        footer {
-            text-align: center;
-            padding: 28px 10px 18px 10px;
-            background: #f0f4fa;
-            color: #555;
-            font-size: 1rem;
-        }
-        .social-links {
-            margin: 12px 0 0 0;
-        }
-        .social-links a {
-            display: inline-block;
-            margin: 0 10px;
-            color: #0077cc;
-            font-size: 1.5rem;
-            transition: color 0.2s;
-        }
-        .social-links a:hover {
-            color: #005fa3;
-        }
-        @media (max-width: 600px) {
-            .hero h1 {
-                font-size: 2rem;
-            }
-            section {
-                padding: 24px 8px;
-            }
-            .project-list {
-                grid-template-columns: 1fr;
-            }
-        }
-        .project-link {
-            display: block;
-        }
-        .project-link:hover {
-            box-shadow: 0 8px 32px rgba(0,123,204,0.15);
-            transform: translateY(-8px) scale(1.03);
-        }
-        .project-btns {
-            display: flex;
-            gap: 10px;
-            margin-top: 16px;
-        }
-         .rotating-skills {
-             background: linear-gradient(90deg, #0077cc 60%, #00c6fb 100%);
-             padding: 30px 20px;
-             text-align: center;
-             color: white;
-         }
-        .skills-container {
-            max-width: 900px;
-            margin: 0 auto;
-            position: relative;
-            height: 60px;
-            overflow: hidden;
-        }
-        .skill-group {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.5s ease;
-        }
-        .skill-group.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        .skill-item {
-            background: rgba(255, 255, 255, 0.2);
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-weight: 600;
-            font-size: 14px;
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-        }
-    </style>
-    <!-- Font Awesome for social icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZZ8XZ3VRSP"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-ZZ8XZ3VRSP');
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sarvesh Mishra | Tech Sales</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f5f7fa;
+      color: #333;
+    }
+    .container {
+      max-width: 900px;
+      margin: auto;
+      background: #fff;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+    .profile-img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    h1 {
+      margin-bottom: 5px;
+    }
+    .contact {
+      font-size: 14px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+    h2 {
+      border-bottom: 2px solid #0073e6;
+      padding-bottom: 5px;
+      margin-top: 25px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    .job {
+      margin-bottom: 15px;
+    }
+    .job-title {
+      font-weight: bold;
+    }
+    .date {
+      float: right;
+      color: #777;
+      font-size: 13px;
+    }
+    a {
+      color: #0073e6;
+      text-decoration: none;
+    }
+  </style>
 </head>
 <body>
-<header>
-    <div class="hero">
-        <div class="profile-img"></div>
-        <h1>Sarvesh Mishra</h1>
-        <p>Data Analytics & Product Optimization</p>
-    </div>
-</header>
-<!-- Rotating Skills Section -->
-<div class="rotating-skills">
-    <div class="skills-container">
-        <div class="skill-group active">
-            <span class="skill-item">Python</span>
-            <span class="skill-item">Dashboard</span>
-            <span class="skill-item">Database</span>
-        </div>
-        <div class="skill-group">
-            <span class="skill-item">SQL</span>
-            <span class="skill-item">MS Excel</span>
-            <span class="skill-item">PowerBI</span>
-        </div>
-        <div class="skill-group">
-            <span class="skill-item">A/B Testing</span>
-            <span class="skill-item">Statistics</span>
-            <span class="skill-item">Product</span>
-        </div>
-        <div class="skill-group">
-            <span class="skill-item">Analytics</span>
-            <span class="skill-item">Python</span>
-            <span class="skill-item">Git</span>
-        </div>
-    </div>
+
+<div class="container">
+
+  <!-- Header -->
+
+  <div class="header">
+    <img src="https://raw.githubusercontent.com/msarvesh2022/msarvesh2022.github.io/main/WhatsApp%20Image%202026-05-05%20at%2010.37.57%20PM.jpeg" 
+         alt="Sarvesh Mishra" 
+         class="profile-img">
+
+```
+<div>
+  <h1>Sarvesh Mishra</h1>
+  <div class="contact">
+    📞 +91 8957883380 | ✉️ sarveshmishra.bhu20@gmail.com <br>
+    🔗 <a href="https://www.linkedin.com/in/sarvesh-mishra-6316ab228" target="_blank">LinkedIn</a>
+  </div>
 </div>
-<section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I'm Sarvesh.
-        I am passionate about data analytics and enjoy working 
-        with data to generate meaningful insights that solve real-world problems 
-        in finance, healthcare, automation and quick commerce.        .</p>
-</section>
-<section id="projects">
-    <h2>Projects</h2>
-    <div class="project-list">
-        <div class="project">
-            <h3>Factors Influencing Banking Customer Attrition</h3>
-            <p>Identified the key factors behind why customers stop using the bank's services and proposed solutions to overcome this.</p>
-            <div class="project-btns">
-                <a href="churn-insights.html" class="btn">View Insights</a>
-                <a href="https://github.com/msarvesh2022/Customer-Churn-Prediction" class="btn">View on GitHub</a>
-            </div>
-        </div>
-        <div class="project">
-            <h3>Uber Ride Optimization</h3>
-            <p>Analyzed Uber ride cancellation records and proposed solutions to improve net revenue by 38%.</p>
-            <div class="project-btns">
-                <a href="uber-insights.html" class="btn">View Insights</a>
-                <a href="https://github.com/msarvesh2022/uber-ride-optimizaion" class="btn">View on GitHub</a>
-            </div>
-        </div>
-        <div class="project">
-            <h3>A/B Testing for Social Media Advertising</h3>
-            <p>Analyzed social media advertising campaigns to optimize ROI and improve targeting strategies using advanced analytics and A/B testing.</p>
-            <div class="project-btns">
-                <a href="#" class="btn">View Insights</a>
-                <a href="https://github.com/msarvesh2022/Ad-campaign-" class="btn">View on GitHub</a>
-            </div>
-        </div>
-        <div class="project">
-            <h3>Sales Insights for Inventory Management & Optimization</h3>
-            <p>Analyzed one quarter of product sales data to ensure better inventory management, improved profitability, and sustainable growth</p>
-            <div class="project-btns">
-                <a href="project.html" class="btn">View Insights</a>
-                <a href="https://github.com/msarvesh2022/Sales-BI/tree/main" class="btn">View on GitHub</a>
-            </div>
-        </div>
-        
-        <!-- Add more projects as needed -->
+```
+
+  </div>
+
+  <!-- Summary -->
+
+  <h2>Summary</h2>
+  <p>
+    Results-driven Sales Development professional with 1.5+ years of experience in SaaS, e-commerce, and influencer marketing. Skilled in high-volume outbound prospecting, pipeline generation, and end-to-end sales cycles. Currently at Shopdeck, driving seller acquisition through cold calling, demos, and consultative selling while managing CRM workflows in Salesforce. Focused on articulating value-driven solutions and contributing to revenue growth in tech sales environments.
+  </p>
+
+  <!-- Work Experience -->
+
+  <h2>Work Experience</h2>
+
+  <div class="job">
+    <div class="job-title">
+      Business Development Associate – Shopdeck
+      <span class="date">March 2026 – Present</span>
     </div>
-</section>
-<section id="skills">
-    <h2>Skills</h2>
-    <ul class="skills-grid">
-        <li class="skill-badge">Data Analytics</li>
-        <li class="skill-badge">Product Growth & Optimization</li>
-        <li class="skill-badge">A/B Testing</li>
-        <li class="skill-badge">SQL</li>
-        <li class="skill-badge">MS Excel</li>
-        <li class="skill-badge">Dashboard building [PowerBI]</li>
-        <li class="skill-badge">Databse (MySQL, PostgreSQL, BigQuery)</li>
-        <li class="skill-badge">Python</li>
-        <li class="skill-badge">Git</li>
+    <ul>
+      <li>Driving end-to-end sales by pitching SaaS solutions to D2C brands, making 100+ outbound calls daily and conducting 3–4 client meetings to convert prospects into onboarded customers.</li>
+      <li>Identifying and engaging high-potential leads, managing the sales pipeline, and consistently achieving onboarding targets through high-volume outreach and consultative selling.</li>
+      <li>Updating Salesforce CRM to track interactions, ensure strong follow-ups, and maintain an organized pipeline for improved conversion rates.</li>
     </ul>
-</section>
-<footer>
-    <div>© 2024 Sarvesh Mishra. All rights reserved.</div>
-    <div class="social-links">
-        <a href="https://github.com/msarvesh2022" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/sarvesh-mishra-6316ab228/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:sarveshmishra.bhu20@email.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a>
-        <!-- Add more social links as needed -->
+  </div>
+
+  <div class="job">
+    <div class="job-title">
+      Sales Executive – StarsColab
+      <span class="date">Nov 2025 – March 2026</span>
     </div>
-</footer>
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-    const skillGroups = document.querySelectorAll('.skill-group');
-    let currentIndex = 0;
-    
-    function rotateSkills() {
-        // Hide current group
-        skillGroups[currentIndex].classList.remove('active');
-        
-        // Move to next group
-        currentIndex = (currentIndex + 1) % skillGroups.length;
-        
-        // Show new group
-        skillGroups[currentIndex].classList.add('active');
-    }
-    
-    // Start rotation every 2 seconds
-    setInterval(rotateSkills, 2000);
-});
-</script>
+    <ul>
+      <li>Managed end-to-end sales outreach to brands, pitching influencer marketing solutions and closing collaboration deals.</li>
+      <li>Built and maintained strong relationships with brand managers and marketing teams to drive repeat business.</li>
+      <li>Identified new sales opportunities through market research, lead generation, and competitor analysis.</li>
+      <li>Coordinated with creators and internal teams to ensure timely campaign execution and fulfillment of sales commitments.</li>
+    </ul>
+  </div>
+
+  <div class="job">
+    <div class="job-title">
+      Marketing Executive – Lupin Limited
+      <span class="date">Feb 2024 – March 2025</span>
+    </div>
+    <ul>
+      <li>Executed all marketing plans for the assigned products under the guidance of the Product and Marketing team.</li>
+      <li>Monitored sales performance and provided regular reports to the marketing and product management teams for strategic decision-making.</li>
+      <li>Communicated with stockists and retailers regarding product availability and conducted market research and surveys on competitor products.</li>
+      <li>Collected customer feedback to analyze satisfaction levels and identify opportunities for product improvement.</li>
+    </ul>
+  </div>
+
+  <!-- Skills -->
+
+  <h2>Skills</h2>
+
+  <ul>
+    <li><strong>Sales & Business Development:</strong> Lead generation, B2B/B2C sales, Client acquisition, Relationship management, Negotiation, Revenue growth</li>
+    <li><strong>Market Research & Strategy:</strong> Competitor analysis, Market segmentation, Pricing strategy, Go-to-market planning, Brand positioning</li>
+    <li><strong>Analytics & Reporting:</strong> Sales forecasting, CRM analytics, Funnel optimization, Conversion tracking, ROI measurement</li>
+    <li><strong>Tools & Platforms:</strong> Apollo, ZoomInfo, Salesforce, Microsoft Excel, Power BI, Microsoft PowerPoint</li>
+  </ul>
+
+  <!-- Education -->
+
+  <h2>Education</h2>
+  <p>
+    Bachelor of Science (BSc), Banaras Hindu University (2020–2023)
+  </p>
+
+  <!-- Career Goal -->
+
+  <h2>Career Goal</h2>
+  <p>
+    Seeking a challenging role in Sales and Marketing where I can leverage my skills in lead generation and business development to drive revenue growth. I aim to contribute to strategic decision-making, optimize marketing campaigns, and strengthen client relationships. My goal is to continuously enhance my analytical and leadership abilities while delivering measurable business impact and fostering brand growth.
+  </p>
+
+</div>
+
 </body>
 </html>
